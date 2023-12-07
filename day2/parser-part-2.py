@@ -20,6 +20,7 @@ for line in fileinput.input(inputFile):
                 case 'blue' if am > max_blue: max_blue = am
                 case 'green' if am > max_green: max_green = am
                 case 'red' if am > max_red: max_red = am
+    
     power = max_blue * max_green * max_red
     sum = sum + power
 
