@@ -23,12 +23,14 @@ def findFirstHighest(start : int, end : int, best_dest : int, time : int):
     if dist > best_dest:
         # the solution is to the left
         if lenght > 2:
+            # middle value can still be the solution
             return findFirstHighest(start, middle, best_dest, time)
         else:
             return middle
     else:
         # the solution is to the right
         if lenght > 2:
+            # middle value is not the solution
             return findFirstHighest(middle + 1, end, best_dest, time)
         else:
             return None if lenght == 1 else end
