@@ -37,7 +37,7 @@ def findFirstHighest(start : int, end : int, best_dest : int, time : int):
 
 time = info['Time'] 
 best_distance = info['Distance']
-hold = findFirstHighest(0, time, best_distance, time)
+hold = findFirstHighest(0, time // 2 + 1, best_distance, time)
 ways = time + 1 - 2 * hold
 
 print('hold for ' + str(hold) + ' seconds at a minimum')
