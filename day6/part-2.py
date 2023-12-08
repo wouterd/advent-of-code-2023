@@ -17,7 +17,7 @@ print (info)
 # left of the range are lower values, right of the range are higher values
 def findFirstHighest(start : int, end : int, best_dest : int, time : int):
     lenght = end - start + 1
-    middle = start + lenght // 2
+    middle = start + lenght // 2 - 1 + lenght % 2
     dist = middle * (time - middle)
     print((start,middle,end,dist))
     if dist > best_dest:
@@ -29,9 +29,9 @@ def findFirstHighest(start : int, end : int, best_dest : int, time : int):
     else:
         # the solution is to the right
         if lenght > 2:
-            return findFirstHighest(middle, end, best_dest, time)
+            return findFirstHighest(middle + 1, end, best_dest, time)
         else:
-            return None
+            return None if lenght == 1 else end
 
 time = info['Time'] 
 best_distance = info['Distance']
