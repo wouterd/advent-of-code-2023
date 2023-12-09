@@ -23,7 +23,6 @@ for l in fileinput.input(inputFile):
         decrease = deltas.pop()[0] - decrease
 
     next_value = values[0] - decrease
-    print(next_value)
     sum += next_value
 
 print(sum)
